@@ -18,6 +18,7 @@ dependencies = [
 
 [project.scripts]
 rst2txtast = "rst2txtast.cmd:run"
+rst2ast = "rst2txtast.compat:run"
 
 [project.urls]
 Repository = "https://github.com/atsphinx/rst2txtast"
