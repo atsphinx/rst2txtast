@@ -1,19 +1,19 @@
-from docutils import writers, nodes
+from docutils import nodes, writers
 
 try:
     import simplejson as json
-except ImportError as e:
+except ImportError:
     import json
 
-__docformat__ = 'reStructuredText'
+__docformat__ = "reStructuredText"
 
 
 class ASTWriter(writers.Writer):
-    supported = ('ast',)
+    supported = ("ast",)
     """Formats this writer supports."""
 
-    config_section = 'docutils_ast writer'
-    config_section_dependencies = ('writers',)
+    config_section = "docutils_ast writer"
+    config_section_dependencies = ("writers",)
 
     output = None
     """Final translated form of `document`."""
@@ -26,7 +26,7 @@ class ASTWriter(writers.Writer):
     def translate(self):
         self.visitor = visitor = self.translator_class(self.document)
         self.document.walkabout(visitor)
-        self.output = ''.join(visitor.output)
+        self.output = "".join(visitor.output)
 
 
 class ASTTranslator(nodes.GenericNodeVisitor):
@@ -35,7 +35,7 @@ class ASTTranslator(nodes.GenericNodeVisitor):
         result, line = self.walk(document)
         self.output = [json.dumps(result)]
 
-    def walk(self, node, line=1):
+    def walk(self, node, line=1):  # noqa: C901
         if not isinstance(node, nodes.Node):
             return None, None
         result = {}
@@ -45,33 +45,39 @@ class ASTTranslator(nodes.GenericNodeVisitor):
         # Attributes
         for k, v in node.__dict__.items():
             try:
-                if not k.startswith('__') and isinstance(v, (str, int, float, bool,)):
+                if not k.startswith("__") and isinstance(
+                    v,
+                    (
+                        str,
+                        int,
+                        float,
+                        bool,
+                    ),
+                ):
                     result[k] = v
-            except NameError as e:
+            except NameError:
                 pass
         # Tag Name (type)
-        if 'tagname' not in result:
-            result['tagname'] = 'text'
+        if "tagname" not in result:
+            result["tagname"] = "text"
         # Text
         if isinstance(node, (nodes.Text,)):
-            result['text'] = node.astext()
+            result["text"] = node.astext()
         # line.start
-        result['line'] = {
-            'start': line
-        }
+        result["line"] = {"start": line}
         # Children
-        children = getattr(node, 'children', [])
+        children = getattr(node, "children", [])
         if len(children) > 0:
-            result['children'] = []
+            result["children"] = []
             for child_node in children:
                 res, _line = self.walk(child_node, line)
                 if not res:
                     continue
-                result['children'].append(res)
+                result["children"].append(res)
                 if line < _line:
                     line = _line
         # Line End
-        result['line']['end'] = line
+        result["line"]["end"] = line
         return result, line
 
     # GenericNodeVisitor methods

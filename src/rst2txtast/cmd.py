@@ -1,5 +1,6 @@
+from docutils.core import publish_cmdline
+
 from . import writer
-from docutils.core import default_description, publish_cmdline
 
 
 def run():
