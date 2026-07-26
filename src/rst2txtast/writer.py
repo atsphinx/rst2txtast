@@ -1,9 +1,6 @@
-from docutils import nodes, writers
+import json
 
-try:
-    import simplejson as json
-except ImportError:
-    import json
+from docutils import nodes, writers
 
 __docformat__ = "reStructuredText"
 
