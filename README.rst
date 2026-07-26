@@ -1,75 +1,38 @@
-##############################
-Docutils AST Writer
-##############################
+==========
+rst2txtast
+==========
 
-About Shiguredo's open source software
-==============================================
+.. note:: 用途を考慮して、README等は日本語メインでの記載となります。
 
-We will not respond to PRs or issues that have not been discussed on Discord. Also, Discord is only available in Japanese.
+概要
+====
 
-Please read https://github.com/shiguredo/oss/blob/master/README.en.md before use.
+docutilsを通して、reStructuredTextなどから TxtAST(ltextlintが内部処理に使用するAST)を生成するCLIです。
 
-時雨堂のオープンソースソフトウェアについて
-==============================================
+このリポジトリは、
+`@jimo1001 <https://github.com/johejo/>`_ の https://github.com/jimo1001/docutils-ast-writer をフォークして公開さていた、
+`@shiguredo <https://github.com/shiguredo/>`_ の https://github.com/shiguredo/docutils-ast-writer をフォークしたものです。
 
-利用前に https://github.com/shiguredo/oss をお読みください。
-
-Docutils AST Writer について
-============================
-
-このリポジトリは `@jimo1001 <https://github.com/johejo/>`_ の https://github.com/jimo1001/docutils-ast-writer フォークです。
-
-時雨堂がメンテナンスをしています。
+PyPIへの登録を想定しており、コマンド名とパッケージ名を変更して運用しています。
 
 インストール
-======================
+============
 
-**PyPI には登録を行っていません**
+現在は、PyPIへの登録を行っていません。
 
 .. code-block:: console
 
-   $ pip install -e git+https://github.com/shiguredo/docutils-ast-writer@shiguredo#egg=docutils-ast-writer
-
-
-requirements.txt を利用している場合は以下を追記してください。
-
-::
-
-  -e git+https://github.com/shiguredo/docutils-ast-writer@shiguredo#egg=docutils-ast-writer
-
+   $ pip install -e git+https://github.com/atsphinx/rst2txtast
 
 使い方
-======================
+======
 
 .. code-block:: console
 
-   $ rst2ast [options] [<source> [<destination>]]
+   $ rst2txtast [options] [<source> [<destination>]]
 
 
 ライセンス
-======================
+==========
 
-::
-
-  The MIT License (MIT)
-
-  Copyright (c) 2023-2023 Shiguredo Inc.
-  Copyright (c) 2016 jimo1001
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to deal
-  in the Software without restriction, including without limitation the rights
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
+MITライセンスの下で公開されています。
