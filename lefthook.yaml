@@ -5,6 +5,9 @@ templates:
 pre-commit:
   parallel: true
   jobs:
+    - name: 'EditorConfig'
+      glob: '*.rst'
+      run: 'ec {staged_files}'
     - name: 'Ruff'
       glob: '*.py'
       group:
@@ -19,3 +22,6 @@ pre-commit:
     - name: 'Pyrefly'
       glob: '*.py'
       run: '{run_python} pyrefly check {staged_files}'
+    - name: 'reStructuredText'
+      glob: '*.rst'
+      run: 'uv run restructuredtext-lint {staged_files}'
