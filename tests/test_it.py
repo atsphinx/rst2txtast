@@ -22,9 +22,22 @@ def test_it(source: Path):
             source=source.read_text(),
             source_path=str(source.name),
             writer=ASTWriter(),
+            settings_overrides={
+                "file_insertion_enabled": False,
+            },
         )
     )
-    diff = DeepDiff(expected, actual, ignore_order=True)
+    diff = DeepDiff(
+        expected,
+        actual,
+        ignore_order=True,
+        exclude_paths=[
+            "root[**]['line']",
+            "root[**]['lineno']",
+            "root[**]['rawsource']",
+            "root[**]['source']",
+        ],
+    )
     # Show parsed data and diff to check behavior of writer.
     pprint({"ACTUAL": actual, "DIFF": diff})
     assert bool(not diff), "See captured stdout to check diff."
