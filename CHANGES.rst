@@ -1,27 +1,28 @@
-#########################
-変更履歴
-#########################
+v0.2.0
+======
 
-UPDATE
-    下位互換がある変更
-ADD
-    下位互換がある追加
-CHANGE
-    下位互換のない変更
-FIX
-    バグ修正
+.. note::
 
+   `フォーク元リポジトリ <https://github.com/shiguredo/docutils-ast-writer>`_ を暫定v0.2.0としています。
+   また、内容自体は変更せずに他のatsphinxプロジェクトとフォーマットを揃えています。
 
-shiguredo
-============================
+Breaking changes
+----------------
 
-- [CHANGE] Docutils のバージョンを ``docutils>=0.18,<0.20`` にする
+* Docutils のバージョンを、Sphinx に揃えて ``docutils>=0.18,<0.20`` にする。
+  by `@voluntas`_
+* Python 3.10 以上を前提にする。
+  by `@voluntas`_
 
-  - Sphinx に揃えてる
-  - @voluntas
-- [CHANGE] Python 3.10 以上を前提にする
+Fixes
+-----
 
-  - @voluntas
-- [FIX] 利用していない引数を変更する
+* 利用していない引数を変更する。
+  by `@voluntas`_
 
-  - @voluntas
+.. _@voluntas: https://github.com/voluntas
+
+v0.1.2
+======
+
+.. note:: `オリジナルの実装内容 <https://github.com/jimo1001/docutils-ast-writer>`_ を参照してください。
