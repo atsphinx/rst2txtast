@@ -29,7 +29,7 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "deepdiff>=6.7.1",
+    "deepdiff>=9.1.0",
     "lefthook>=2.1.10",
     "pyrefly>=0.14.0",
     "pytest>=7.4.4",

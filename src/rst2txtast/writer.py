@@ -27,6 +27,8 @@ class ASTWriter(writers.Writer):
 
 
 class ASTTranslator(nodes.GenericNodeVisitor):
+    _disable_node_classes = (nodes.system_message,)
+
     def __init__(self, document):
         nodes.NodeVisitor.__init__(self, document)
         result, _, _ = self.walk(document)
@@ -78,6 +80,8 @@ class ASTTranslator(nodes.GenericNodeVisitor):
             children = []
             for child in node.children:
                 result_, start, end = self.walk(child, start, end)
+                if isinstance(child, self._disable_node_classes):
+                    continue
                 children.append(result_)
             result["children"] = children
         # Line End

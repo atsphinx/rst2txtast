@@ -1,0 +1,49 @@
+{
+  "rawsource": "",
+  "tagname": "document",
+  "autofootnote_start": 1,
+  "symbol_footnote_start": 0,
+  "line": {
+    "start": 1,
+    "end": 3
+  },
+  "children": [
+    {
+      "tagname": "title",
+      "children": [
+        {
+          "tagname": "text",
+          "text": "Title"
+        }
+      ]
+    },
+    {
+      "tagname": "section",
+      "children": [
+        {
+          "tagname": "title",
+          "children": [
+            {
+              "tagname": "text",
+              "text": "Section 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tagname": "section",
+      "children": [
+        {
+          "tagname": "title",
+          "children": [
+            {
+              "tagname": "text",
+              "text": "Section 3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

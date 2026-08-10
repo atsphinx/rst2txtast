@@ -294,7 +294,7 @@ requires-dist = [{ name = "docutils", specifier = ">=0.18" }]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "deepdiff", specifier = ">=6.7.1" },
+    { name = "deepdiff", specifier = ">=9.1.0" },
     { name = "lefthook", specifier = ">=2.1.10" },
     { name = "pyrefly", specifier = ">=0.14.0" },
     { name = "pytest", specifier = ">=7.4.4" },
