@@ -4,6 +4,7 @@ version = "0.2.0"
 description = "TxtAST Writer for docutils"
 readme = "README.rst"
 license = "MIT"
+license-files = ["LICENSE"]
 authors = [
     { name = "Kazuya Takei", email = "me@attakei.net" }
 ]
