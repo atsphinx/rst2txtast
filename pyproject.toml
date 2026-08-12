@@ -33,8 +33,8 @@ rst2txtast = "rst2txtast.cmd:run"
 rst2ast = "rst2txtast.compat:run"
 
 [project.urls]
-source = "https://github.com/atsphinx/rst2txtast"
-changelog = "https://github.com/atsphinx/rst2txtast/blob/main/CHANGES.rst"
+"Source Code" = "https://github.com/atsphinx/rst2txtast"
+Changelog = "https://github.com/atsphinx/rst2txtast/blob/main/CHANGES.rst"
 "Original project" = "https://pypi.org/project/docutils-ast-writer"
 "Original source" = "https://github.com/jimo1001/docutils-ast-writer"
 
