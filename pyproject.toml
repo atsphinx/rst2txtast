@@ -49,6 +49,7 @@ dev = [
     "pytest>=7.4.4",
     "restructuredtext-lint>=2.0.2",
     "ruff>=0.16.0",
+    "tomli>=2.4.1",
 ]
 
 [tool.ruff.lint]

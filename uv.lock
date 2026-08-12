@@ -273,6 +273,7 @@ dev = [
     { name = "pytest" },
     { name = "restructuredtext-lint" },
     { name = "ruff" },
+    { name = "tomli" },
 ]
 
 [package.metadata]
@@ -285,6 +286,7 @@ dev = [
     { name = "pytest", specifier = ">=7.4.4" },
     { name = "restructuredtext-lint", specifier = ">=2.0.2" },
     { name = "ruff", specifier = ">=0.16.0" },
+    { name = "tomli", specifier = ">=2.4.1" },
 ]
 
 [[package]]
