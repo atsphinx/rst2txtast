@@ -14,6 +14,8 @@ jobs:
       - uses: flatt-security/setup-takumi-guard-pypi@v1.0.1
       - name: Build package
         run: |
+          uv sync
+          uv run tools/versioning-for-testpypi.py
           uv build
           ls -l dist
       - uses: actions/upload-artifact@v7
