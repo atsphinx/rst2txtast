@@ -8,6 +8,22 @@ license-files = ["LICENSE"]
 authors = [
     { name = "Kazuya Takei", email = "me@attakei.net" }
 ]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Text Processing :: Markup :: reStructuredText",
+]
 requires-python = ">=3.10"
 dependencies = [
     "docutils>=0.18",
@@ -18,7 +34,10 @@ rst2txtast = "rst2txtast.cmd:run"
 rst2ast = "rst2txtast.compat:run"
 
 [project.urls]
-Repository = "https://github.com/atsphinx/rst2txtast"
+source = "https://github.com/atsphinx/rst2txtast"
+changelog = "https://github.com/atsphinx/rst2txtast/blob/main/CHANGES.rst"
+"Original project" = "https://pypi.org/project/docutils-ast-writer"
+"Original source" = "https://github.com/jimo1001/docutils-ast-writer"
 
 [build-system]
 requires = ["uv_build>=0.11.28,<0.12.0"]
