@@ -1,0 +1,39 @@
+name: 'Upload distributions into TestPyPI'
+
+on:
+  push:
+    branches:
+      - 'dev'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: 'atsphinx/.github/actions/setup-aqua@main'
+      - uses: flatt-security/setup-takumi-guard-pypi@v1.0.1
+      - name: Build package
+        run: |
+          uv build
+          ls -l dist
+      - uses: actions/upload-artifact@v7
+        with:
+          name: distribution-files
+          path: dist/
+  publish-testpypi:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment:
+      name: 'testpypi'
+      url: 'https://test.pypi.org/p/rst2txtast'
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: distribution-files
+          path: dist/
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
