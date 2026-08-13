@@ -8,6 +8,7 @@ rst2txtast
 ====
 
 docutilsを通して、reStructuredTextなどから TxtAST(ltextlintが内部処理に使用するAST)を生成するCLIです。
+textlint用プラグインである `textlint-plugin-rst <https://www.npmjs.com/package/textlint-plugin-rst>`_ から呼びだされることを想定しています。
 
 このリポジトリは、
 `@jimo1001 <https://github.com/jimo1001/>`_ の https://github.com/jimo1001/docutils-ast-writer をフォークして公開されていた、
@@ -23,6 +24,26 @@ PyPIへの登録を想定しており、コマンド名とパッケージ名を�
 .. code-block:: console
 
    $ pip install -e git+https://github.com/atsphinx/rst2txtast
+
+TestPyPI上にはアップロードされているため、Gitリポジトリの指定をしたくないのであれば下記のコマンドを推奨します。
+
+.. code-block:: console
+
+   $ pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ rst2txtast
+
+.. note::
+
+   uvでプロジェクトを管理している場合、 ``pyproject.toml`` に下記の記述をして ``uv add rst2txtast`` と実行してください。
+
+   .. code:: toml
+
+      [tool.uv.sources]
+      rst2txtast = { index = "testpypi" }
+
+      [[tool.uv.index]]
+      name = "testpypi"
+      url = "https://test.pypi.org/simple/"
+      explicit = true
 
 使い方
 ======
